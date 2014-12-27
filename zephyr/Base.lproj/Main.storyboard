@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLS-fH-Yz8">
+                                <rect key="frame" x="214" y="50" width="173" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mNZ-W8-NMq"/>
+                                    <constraint firstAttribute="width" constant="173" id="tMK-U4-IW6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Start Reading">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startScanTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EAg-Go-1p2"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="101" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df4-FJ-B0K" userLabel="Heart Rate">
+                                <rect key="frame" x="177" y="109" width="247" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="OHO-Na-uIh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="df4-FJ-B0K" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Hvs-uP-Ofp"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="df4-FJ-B0K" secondAttribute="bottom" constant="305" id="YIl-gh-2AB"/>
+                            <constraint firstItem="nLS-fH-Yz8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="30" id="b3t-T1-Eyh"/>
+                            <constraint firstItem="nLS-fH-Yz8" firstAttribute="centerX" secondItem="df4-FJ-B0K" secondAttribute="centerX" id="uR8-zu-2Ho"/>
+                            <constraint firstItem="df4-FJ-B0K" firstAttribute="top" secondItem="nLS-fH-Yz8" secondAttribute="bottom" constant="29" id="z9y-LJ-098"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="heartRate" destination="df4-FJ-B0K" id="aOQ-ee-M2h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
