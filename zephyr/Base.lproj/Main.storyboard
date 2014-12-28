@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,8 +20,9 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLS-fH-Yz8">
                                 <rect key="frame" x="214" y="50" width="173" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="mNZ-W8-NMq"/>
-                                    <constraint firstAttribute="width" constant="173" id="tMK-U4-IW6"/>
+                                    <constraint firstAttribute="width" constant="173" id="A2W-8G-PxX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="P0d-IK-03T"/>
+                                    <constraint firstAttribute="height" constant="30" id="jtH-JF-o9h"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Start Reading">
@@ -31,26 +33,40 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="101" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df4-FJ-B0K" userLabel="Heart Rate">
-                                <rect key="frame" x="177" y="109" width="247" height="186"/>
+                                <rect key="frame" x="177" y="88" width="247" height="103"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="247" id="OHO-Na-uIh"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="103" id="Up8-2Z-JpP"/>
+                                    <constraint firstAttribute="height" constant="103" id="g8y-WZ-el2"/>
+                                    <constraint firstAttribute="width" constant="247" id="uxD-cD-bok"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3Y9-dE-KPW">
+                                <rect key="frame" x="16" y="199" width="568" height="381"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="c5U-f5-tYO"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="ej6-nK-7RS"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="df4-FJ-B0K" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Hvs-uP-Ofp"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="df4-FJ-B0K" secondAttribute="bottom" constant="305" id="YIl-gh-2AB"/>
-                            <constraint firstItem="nLS-fH-Yz8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="30" id="b3t-T1-Eyh"/>
-                            <constraint firstItem="nLS-fH-Yz8" firstAttribute="centerX" secondItem="df4-FJ-B0K" secondAttribute="centerX" id="uR8-zu-2Ho"/>
-                            <constraint firstItem="df4-FJ-B0K" firstAttribute="top" secondItem="nLS-fH-Yz8" secondAttribute="bottom" constant="29" id="z9y-LJ-098"/>
+                            <constraint firstItem="3Y9-dE-KPW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="18N-Md-m4v"/>
+                            <constraint firstItem="df4-FJ-B0K" firstAttribute="centerX" secondItem="nLS-fH-Yz8" secondAttribute="centerX" id="8T4-nn-4SN"/>
+                            <constraint firstItem="3Y9-dE-KPW" firstAttribute="top" secondItem="df4-FJ-B0K" secondAttribute="bottom" constant="8" symbolic="YES" id="9vU-0I-dgz"/>
+                            <constraint firstItem="df4-FJ-B0K" firstAttribute="top" secondItem="nLS-fH-Yz8" secondAttribute="bottom" constant="8" symbolic="YES" id="AxC-3L-FJy"/>
+                            <constraint firstAttribute="bottom" secondItem="3Y9-dE-KPW" secondAttribute="bottom" constant="20" symbolic="YES" id="OoG-XR-NaT"/>
+                            <constraint firstItem="3Y9-dE-KPW" firstAttribute="centerX" secondItem="df4-FJ-B0K" secondAttribute="centerX" id="nMz-gC-AF2"/>
+                            <constraint firstItem="3Y9-dE-KPW" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="qnB-xg-Sff"/>
+                            <constraint firstItem="nLS-fH-Yz8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="30" id="x2w-yX-HPv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="heartRate" destination="df4-FJ-B0K" id="aOQ-ee-M2h"/>
+                        <outlet property="tableView" destination="3Y9-dE-KPW" id="lGd-Q1-RuS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -10,9 +10,8 @@
 #ifndef zephyr_PrefixHeader_pch
 #define zephyr_PrefixHeader_pch
 
-#import <CocoaLumberjack/CocoaLumberjack.h>
+#import <SVProgressHUD.h>
 
-// Log levels: off, error, warn, info, verbose
-static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+//static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 
 #endif

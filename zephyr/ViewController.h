@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "HxMBLEConnectionManager.h"
 
-@interface ViewController : UIViewController <HxMBLEManagerDelegate>
+@interface ViewController : UIViewController <HxMBLEManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 - (IBAction)startScanTapped:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

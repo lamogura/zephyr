@@ -11,13 +11,15 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
-    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
-    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     
-    [DDLog addLogger:fileLogger];
-    
+//    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+//    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+//    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+//    
+//    [DDLog addLogger:fileLogger];
+//    
     return YES;
 }
 
